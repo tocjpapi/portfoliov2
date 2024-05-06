@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('NeueMontreal-Regular.otf') format('opentype'); 
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  :root {
+      --bg: #0d0d0d; 
+      --text:  #a8a9ad;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  html {
+    font-size: calc(100vw / 1512 * 10);
+    
+  }
+  
+  body {
+    font-family: 'Neue Montreal';
+    font-weight: 200;
+    font-size: medium;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;   
+    overscroll-behavior: contain;
+  }
+  
+  
+  ::-webkit-scrollbar{
+    width: 0;
+  }
+  
+  
+  ::selection{
+    background-color: #d8cabd;
+    color: #111;
+  }
+
+
+  .navigation{
+    z-index: 50000;
+    position: fixed;
+    top: 35px ;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  width: 9vw;
+  display: flex;
+  justify-content: space-between;
+  }
+
+
+.navigation a{
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 400;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    animation: fade-up 1.2s 1s ease forwards;
+
+}
+
+
+.link2:hover,.link3:hover{
+    opacity: 1;
+}
+
+
+
+  
+.link1{
+    opacity: 1;
+}
+
+.link2,.link3{
+    opacity: 0.5;
+transition: opacity 0.3s;
+}
+
+
+@keyframes fade-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+    
+}
+
+
+  
