@@ -81,6 +81,62 @@
     }
 }
 
+.navigation{
+    z-index: 50000;
+    position: fixed;
+    top: 35px ;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  width: 9vw;
+  display: flex;
+  justify-content: space-between;
+  }
+
+
+.navigation a{
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 400;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    animation: fade-up 1.2s 1.4s ease forwards;
+
+}
+
+
+.link2:hover,.link3:hover{
+    opacity: 1;
+}
+
+
+
+  
+.link1{
+    opacity: 1;
+}
+
+.link2,.link3{
+    opacity: 0.5;
+transition: opacity 0.3s;
+}
+
+
+@keyframes fade-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+    
+}
+
+
+  
+
 
     .slide {
     position: absolute;
@@ -159,12 +215,14 @@
         top: 55%;
         left: 30%;
         transform: translate(-50%, -50%);
+        cursor: pointer;
         }  
         .slide-year {
         position: absolute;
         top: 55%;
         right: 20%;
         transform: translate(-50%, -50%);
+     
         }
 
 .slide-number,
@@ -175,3 +233,49 @@ font-size: 18px;
 line-height: 30px;
 clip-path: polygon(0 0,100% 0,100% 30px, 0 30px);
 }
+
+
+.cursor {
+    position: fixed;
+    background: #e9e9e964;
+  backdrop-filter: blur(2px);
+    width: 69px;
+    height: 36px;
+    border-radius: 32px;
+    z-index: 70000;
+    transition: 0.3s  transform,    0.2s  opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8vh;
+    letter-spacing: -5%;
+    transition: transform translate 0.3s;
+    pointer-events: none;
+    border: 1px solid #666;
+    backdrop-filter: blur(9px);
+   
+  }
+  
+  .cursor p{
+    text-align: center;
+    font-family: sf pro text;
+    color: var(--bg);
+    font-weight: 400;
+    font-size: small;
+  
+  }
+  
+  
+  
+  .cursor.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .cursor.active::before {
+    opacity: 1;
+  }
