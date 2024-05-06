@@ -100,7 +100,7 @@
     position: absolute;
     overflow: hidden;
     opacity: 0;
-    animation: fade-up 1.2s 1.4s ease forwards;
+    animation: fade-up 1.2s 1s ease forwards;
 
 }
 
@@ -124,7 +124,7 @@ transition: opacity 0.3s;
 
 @keyframes fade-up {
     from {
-        transform: translateY(50px);
+        transform: translateY(20px);
         opacity: 0;
     }
 
@@ -202,12 +202,13 @@ transition: opacity 0.3s;
         left: 50%;
          transform: translate(-50%, -50%);
         display: flex;
-       gap: 0.25em;
+
 
     }
 
     .postfix span {
-        padding: 0 0.25em;
+        padding-right: 0.35em;
+        padding-left: 0.45em;
 
     }
         .slide-name {
