@@ -4,14 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CJ • About</title>
+    
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <div class="navigation">
-        <div class="link2"><a href="index.html">Work</a></div>
+        <div class="link2"  onclick="navigateToIndex()"><a>Portfolio</a></div>
 
         <div class="link1"><a href="about.html">About</a></div>
 
     </div>
+
+<div id="overlay" class="overlay"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>  
+
+
+
+    <script>
+        function navigateToIndex() {
+            var overlay = document.getElementById('overlay');
+            overlay.style.display = 'block';
+            setTimeout(function() {
+                window.location.href = 'index.html?openedFromLink=true';
+            }, 800); // Adjust the timeout to match the animation duration
+        }
+    
+        // Preload next page
+        var preloadPage = new Image();
+        preloadPage.src = 'index.html?openedFromLink=true';
+    </script>
+
+    
+
+    <script>
+        // Check if touch events are supported
+        if (!("ontouchstart" in window || navigator.msMaxTouchPoints)) {
+          document.querySelectorAll('.navigation a').forEach(btn => {
+            btn.addEventListener("mousemove", (e) => {
+              let x = e.offsetX;
+              let y = e.offsetY;
+              let btnWidth = btn.clientWidth;
+              let btnHeight = btn.clientHeight;
+              let transX = (x - btnWidth / 2);
+              let transY = (y - btnHeight / 2);
+      
+              // GSAP animation for smoother movement
+              gsap.to(btn, {duration: 0.3, x: transX, y: transY, ease: "power2.out"});
+      
+              let mx = e.pageX - btn.offsetLeft;
+              let my = e.pageY - btn.offsetTop;
+              btn.style.setProperty('--x', mx + 'px');
+              btn.style.setProperty('--y', my + 'px');
+            });
+      
+            btn.addEventListener('mouseout', (e) => {
+              // Reset button position
+              gsap.to(btn, {duration: 0.8, x: 0, y: 0, ease: "elastic.out(1, 0.5)"});
+            });
+          });
+        }
+      </script>
 </body>
 </html>

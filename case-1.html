@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJ • Case one</title>
+    <link rel="stylesheet" href="case.css">
+</head>
+<body>
+
+    <div class="navigation">
+        <div class="link1"  onclick="navigateToIndex()"><a>Close</a></div>
+
+    </div>
+
+    <div class="intro">
+
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+
+    <script>
+        function navigateToIndex() {
+            var overlay = document.getElementById('overlay');
+            overlay.style.display = 'block';
+            setTimeout(function() {
+                window.location.href = 'index.html?openedFromLink=true';
+            }, 800); // Adjust the timeout to match the animation duration
+        }
+    
+        // Preload next page
+        var preloadPage = new Image();
+        preloadPage.src = 'index.html?openedFromLink=true';
+    </script>
+    
+</body>
+</html>
