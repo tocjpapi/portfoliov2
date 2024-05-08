@@ -57,14 +57,43 @@
     color: #111;
   }
 
+  .loader{
+    background-color: var(--bg);
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 90099;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s ease;
+}
+
+
+.loader h2 span{
+    display: inline-block;
+    color: var(--text);
+    font-weight: lighter;
+    animation: fade-lin 1s;
+    overflow: hidden;
+    height: 4vh;
+}
+
+@keyframes fade-lin {
+    from{
+        opacity: 0;
+    }
+}
+
+
   
   .slider {
     position: relative;
     width: 100vw;
     height: 100vh;
-    animation: move 1.5s ease forwards;
-    background: #000;
-
+    animation: move 1.2s ease forwards;
+    background: var(--bg);
+    animation-delay: 2.6s ;
   }
 
 
@@ -145,7 +174,8 @@
     position: absolute;
     overflow: hidden;
     opacity: 0;
-    animation: fade-up 1.2s 1s ease forwards;
+    animation: fade-up 1.2s ease forwards;
+    animation-delay: 3.5s;
     cursor: pointer;
 }
 
@@ -199,12 +229,18 @@ transition: opacity 0.3s;
         clip-path: polygon(0 0,100% 0,100% 100%, 0 100%);
         }
 
+        .two{
+          animation: move2 1.4s ease forwards;
+          animation-delay: 2.6s;
+          
+          opacity: 0;
+          scale: 1.4;
+        }
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            animation: move2 1.4s  ease forwards;
-            scale: 1.4;
         }
       
       
@@ -215,6 +251,7 @@ transition: opacity 0.3s;
             }
 
             to{
+              opacity: 1;
                 scale: 1;
             }
         }
@@ -226,10 +263,12 @@ transition: opacity 0.3s;
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 5000;
+     
+          pointer-events: none;
             overflow: hidden;
             opacity: 0;
-            animation: cool 1.3s 0.8s ease forwards;
+            animation: cool 2s ease forwards;
+            animation-delay: 3.2s ;
 
         }
 
@@ -253,6 +292,7 @@ transition: opacity 0.3s;
         display: flex;
 
 
+
     }
 
     .postfix span {
@@ -272,7 +312,7 @@ transition: opacity 0.3s;
         top: 55%;
         right: 20%;
         transform: translate(-50%, -50%);
-     
+        cursor: pointer;
         }
 
 .slide-number,
@@ -341,6 +381,7 @@ clip-path: polygon(0 0,100% 0,100% 30px, 0 30px);
     z-index: 59999;
     animation: fade 0.7s ease forwards;
 }
+
 
 
   @media (max-width: 500px) {

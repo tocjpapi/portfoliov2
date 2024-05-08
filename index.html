@@ -7,54 +7,22 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="view-transition" content="same-origin" />
     <link rel="stylesheet" href="style.css">
-    <title>Cj • Home</title>
+    <title>Cj Web Developer & Designer • Home</title>
 </head>
 <body>
 
-
-    <div class="navigation">
-        <div class="link1"><a href="index.html">Portfolio</a></div>
-
-        <div class="link2"><a onclick="navigateToAbout()">About</a></div>
-
-    </div>
-
-    <div class="slider-content">
-        <div class="slide-number">
-            <div class="prefix">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-            </div>
-            <div class="postfix"><span> • </span>5</div>
+    <div class="loader desktop">
+        <div class="txt">
+            <h2><span>Please</span>
+            <span>Scroll</span>
+            <span>To</span>
+            <span>Explore</span></h2>
         </div>
-            
-        <div class="slide-name">
-            <div class="names">
-       
-                <div onclick="navigateToCase1()">We Are Élanique</div>
-                <div>The Art of Emergence ®</div>
-                <div>The Drama Club</div>
-                <div>Portfolio of Yuto</div>
-                <div>Stratagem Synergy ®</div>
-            </div>
         </div>
-        <div class="slide-year">
-            <div class="years">
-                <div>' 24</div>
-                <div>' 23</div>
-                <div>' 24</div>
-                <div>' 23</div>
-                <div>' 24</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="slider">
-        <div class="slide" id="slide-1">
-            <img src="2.jpg" alt="" srcset="">
+
+    <div class="slider desktop">
+        <div  onclick="navigateToCase1()" class="slide" id="slide-1" >
+            <img class="two" src="2.jpg" alt="" srcset="">
         </div>
     
         <div class="slide" id="slide-2">
@@ -75,6 +43,49 @@
         
         <div style="height: 400vh;"></div> <!-- Added an element to extend slider height -->
     </div>
+
+    <div class="navigation">
+        <div class="link1"><a href="index.html">Portfolio</a></div>
+
+        <div class="link2"><a onclick="navigateToAbout()">About</a></div>
+
+    </div>
+
+
+    <div class="slider-content desktop">
+        <div class="slide-number">
+            <div class="prefix">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+            </div>
+            <div class="postfix"><span> • </span>5</div>
+        </div>
+            
+        <div class="slide-name">
+            <div class="names">
+       
+                <div onclick="navigateToCase1()">We Are Élanique ® </div>
+                <div>The Art of Emergence ®</div>
+                <div>The Drama Club</div>
+                <div>Portfolio of Yuto</div>
+                <div>Contansce Synergy ®</div>
+            </div>
+        </div>
+        <div class="slide-year">
+            <div class="years">
+                <div onclick="navigateToCase1()">' 24</div>
+                <div>' 23</div>
+                <div>' 24</div>
+                <div>' 23</div>
+                <div>' 24</div>
+            </div>
+        </div>
+    </div>
+    
+
 
 
     <div class="skeleton" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none;"></div>
@@ -328,6 +339,25 @@
   if (isOpenedFromLink) {
     var slider = document.querySelector(".slider");
     slider.style.animation = "none"; // Remove animation
+    var loader = document.querySelector(".loader");
+    loader.style.display = "none"; 
+
+
+
+
+var navLinks = document.querySelectorAll(".navigation a");
+navLinks.forEach(function(link) {
+    link.style.animationDelay = "0s"; // Set animation delay to zero seconds for each link
+});
+
+var imag = document.querySelector("img");
+imag.style.animationDelay = "0s";
+
+var slidercontent = document.querySelector(".slider-content");
+slidercontent.style.animationDelay = "0s";
+
+
+
   }
 });
 
@@ -357,5 +387,37 @@
 });
 
 </script>
+
+<script>
+    function loader(){
+      var tl = gsap.timeline()
+    tl.from(".loader span",{
+      duration:1.2,
+      stagger:.03,
+      delay:.1,
+      ease: "power3.inOut" 
+    })
+    tl.to(".loader span",{
+      duration: 1.1,
+      opacity:0,
+      stagger:.03,
+      ease: "power3.inOut" 
+    })
+    
+    
+    tl.to('.loader', {
+      duration: 0.9,
+      opacity: 0,
+
+      onComplete: function() {
+        TweenLite.set('.loader', { display: "none" });
+      }
+    });
+    
+    
+    }
+    loader();
+    </script>
+
 </body>
 </html>
