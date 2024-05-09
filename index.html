@@ -85,6 +85,57 @@
         </div>
     </div>
     
+    <div class="flexpls">
+
+    <div class="project1 mobile">
+        <div class="block">
+            <div class="blockimg" onclick="navigateToCase1()">
+                <img src="2.jpg" alt="" srcset="">
+                <div class="text"><p>We Are Élanique ®</p></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="project1 mobile">
+        <div class="block">
+            <div class="blockimg" onclick="navigateToCase1()">
+                <img src="https://images.unsplash.com/photo-1647120170310-513d71402e20?q=80&w=1666&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+                <div class="text"><p>The Art of Emergence ®</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project1 mobile">
+        <div class="block">
+            <div class="blockimg" onclick="navigateToCase1()">
+                <img src="3.jpg" alt="" srcset="">
+                <div class="text"><p>The Art of Emergence ®</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project1 mobile">
+        <div class="block">
+            <div class="blockimg" onclick="navigateToCase1()">
+                <img src="4.jpg" alt="" srcset="">
+                <div class="text"><p>The Art of Emergence ®</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project1 mobile">
+        <div class="block">
+            <div class="blockimg" onclick="navigateToCase1()">
+                <img src="https://images.unsplash.com/photo-1608623643122-ba620a693c3b?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+                <div class="text"><p>The Art of Emergence ®</p></div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
 
 
 
@@ -221,20 +272,7 @@
     
             let touchStartX = 0;
             let touchEndX = 0;
-    
-            window.addEventListener("touchstart", function (event) {
-                touchStartX = event.touches[0].clientX;
-            }, { passive: true });
-    
-            window.addEventListener("touchmove", function (event) {
-                event.preventDefault(); // Prevent scrolling while swiping
-            }, { passive: false });
-    
-            window.addEventListener("touchend", function (event) {
-                touchEndX = event.changedTouches[0].clientX;
-                handleTouchControls(touchStartX, touchEndX);
-            }, { passive: true });
-    
+  
             window.addEventListener("wheel", (e) => {
                 if (isAnimating) return;
                 if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {

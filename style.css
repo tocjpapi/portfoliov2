@@ -382,6 +382,75 @@ clip-path: polygon(0 0,100% 0,100% 30px, 0 30px);
     animation: fade 0.7s ease forwards;
 }
 
+.project1{
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  animation: fade-up 1.2s 0.2s ease forwards;
+}
+
+.block{
+height: 75vh;
+width: 92%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+
+.blockimg{
+  height: 100%;
+width: 100%;
+overflow: hidden;
+border: 1px solid #111;
+border-radius: 13px;
+}
+
+.blockimg img{
+  height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
+
+.flexpls{
+  display: flex;
+  height: fit-content;
+  gap: 55px;
+  flex-direction: column;
+  padding-bottom: 55px;
+  margin-top: 90px;
+}
+
+@media (hover:hover){
+  .mobile{
+    display: none;
+  }
+}
+
+
+@media (hover:none){
+  .desktop {
+     display: none;
+}
+
+.navigation a{
+  animation-delay: 0s;
+}
+
+body {
+
+  overflow: scroll;
+
+}
+
+
+
+}
+
+
 
 
   @media (max-width: 500px) {
@@ -392,3 +461,4 @@ clip-path: polygon(0 0,100% 0,100% 30px, 0 30px);
     }
 
 }
+
