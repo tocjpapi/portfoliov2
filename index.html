@@ -29,19 +29,19 @@
             <img src="https://images.unsplash.com/photo-1647120170310-513d71402e20?q=80&w=1666&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         </div>
     
-        <div class="slide" id="slide-3">
+        <div onclick="navigateToCase3()" class="slide" id="slide-3">
             <img src="3.jpg" alt="" srcset="">
         </div>
     
-        <div class="slide" id="slide-4">
+        <div onclick="navigateToCase4()" class="slide" id="slide-4">
             <img src="4.jpg" alt="" srcset="">
         </div>
     
-        <div class="slide" id="slide-5">
+        <div onclick="navigateToCase5()" class="slide" id="slide-5">
             <img src="https://images.unsplash.com/photo-1608623643122-ba620a693c3b?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         </div>
         
-        <div style="height: 400vh;"></div> <!-- Added an element to extend slider height -->
+        <div style="height: 400vh;"></div> 
     </div>
 
     <div class="navigation">
@@ -364,6 +364,48 @@
     // Preload next page
     var preloadPage = new Image();
     preloadPage.src = 'case-2.html';
+</script>
+
+<script>
+    function navigateToCase3() {
+        var overlay = document.getElementById('overlay');
+        overlay.style.display = 'block';
+        setTimeout(function() {
+            window.location.href = 'case-3.html';
+        }, 800); // Adjust the timeout to match the animation duration
+    }
+
+    // Preload next page
+    var preloadPage = new Image();
+    preloadPage.src = 'case-3.html';
+</script>
+
+<script>
+    function navigateToCase4() {
+        var overlay = document.getElementById('overlay');
+        overlay.style.display = 'block';
+        setTimeout(function() {
+            window.location.href = 'case-4.html';
+        }, 800); // Adjust the timeout to match the animation duration
+    }
+
+    // Preload next page
+    var preloadPage = new Image();
+    preloadPage.src = 'case-4.html';
+</script>
+
+<script>
+    function navigateToCase5() {
+        var overlay = document.getElementById('overlay');
+        overlay.style.display = 'block';
+        setTimeout(function() {
+            window.location.href = 'case-5.html';
+        }, 800); // Adjust the timeout to match the animation duration
+    }
+
+    // Preload next page
+    var preloadPage = new Image();
+    preloadPage.src = 'case-5.html';
 </script>
 
 <script>
