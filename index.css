@@ -425,6 +425,26 @@ object-fit: cover;
   margin-top: 90px;
 }
 
+.text{
+  z-index: 5000;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.blockimg img{
+  position: absolute;
+}
+
+.blockimg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text p{
+
+}
+
 @media (hover:hover){
   .mobile{
     display: none;
@@ -450,6 +470,8 @@ body {
 
 
 }
+
+
 
 
 

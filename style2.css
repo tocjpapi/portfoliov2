@@ -40,7 +40,7 @@
     -moz-osx-font-smoothing: grayscale;
     background: var(--bg);
     color: var(--text);
-    overflow: hidden;
+    overflow-x: hidden;
     width: 100vw;
     height: 100vh;   
     overscroll-behavior: contain;
@@ -124,6 +124,8 @@ cursor: pointer;
     animation: fade 0.7s ease forwards;
 }
 
+
+
 @keyframes fade{
     from{
         opacity: 0;
@@ -131,6 +133,182 @@ cursor: pointer;
 }
 
 
+.second{
+  height: 100vh;
+  background: var(--bg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-weight: 400;
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+.bespaced{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.moveone{
+  transform: translateY(20px);
+  animation: fadeIng 1.3s 0.4s ease forwards;
+  opacity: 0;
+}
+
+.movetwo{
+  transform: translateY(20px);
+  animation: fadeIng 1.3s 0.5s ease forwards;
+  opacity: 0;
+}
+
+
+.talk{
+  width: 35vw;
+}
+
+.talk p{
+
+
+}
+
+
+.slide-up{
+  opacity: 0;
+}
+
+.slide-up.animated {
+  animation: fadeIng 1s ease forwards;
+  opacity: 1;
+}
+
+@keyframes fadeIng {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+
+
+  100% {
+    opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+.endy{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+
+.maint h1{
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.4;
+  font-size: medium;
+}
+
+
+.container p{
+  font-weight: 400;
+  opacity: 0.7;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+
+.wii{
+  font-family: sf pro rounded;
+}
+
+.talk span{
+  opacity: 0.7;
+}
+
+.one{
+  transition: all 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.one p{
+  overflow: hidden;
+}
+
+.one span{
+  padding-left: 6px;
+  transition: all 0.3s;
+  font-weight: 300;
+  opacity: 0;
+  position: absolute;
+  scale: 0;
+}
+
+.one:hover span{
+  padding-left: 12px;
+  opacity: 0.5;
+  scale: 1;
+}
+
+.one:hover{
+  opacity: 0.5;
+}
+
+.inner{
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 18px;
+}
+
+.centerthis{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 35px;
+  left: 40px;
+  width: 100vw;
+}
+
+
+.slide-ups{
+  opacity: 0;
+  transform: translateY(100%);
+  overflow: hidden
+}
+
+.slide-ups.animated {
+  animation: come 1.2s ease forwards;
+  opacity: 1;
+}
+
+
+@keyframes come {
+  from{
+  transform: translateY(100%)
+}
+
+to{
+  transform: translateY(0)
+}
+}
 
 @media (max-width: 500px) {
     .navigation{
@@ -138,6 +316,11 @@ cursor: pointer;
       width: 30vw;
       transform: translate(0%, 0%);
     }
+
+    
+    .talk{
+      width: 75vw;
+  }
 
 
 
