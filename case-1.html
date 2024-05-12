@@ -136,13 +136,27 @@
         <div class="bigimg">
             <img src="https://images.unsplash.com/photo-1647120170310-513d71402e20?q=80&w=1666&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         </div>
-        <div class="whine2"><p class="fade-bim">The Art of Emergence ®</p></div>
+        <div class="whine2" onclick="navigateToNext()"><p class="fade-bim">The Art of Emergence ®</p></div>
         <div class="whine3"><p class="fade-bim">Up Next <span>.</span> ↑</p> </div>
     </div>
     
 
     <div id="overlay" class="overlay"></div>
 
+
+    <script>
+        function navigateToNext() {
+            var overlay = document.getElementById('overlay');
+            overlay.style.display = 'block';
+            setTimeout(function() {
+                window.location.href = 'case-2.html';
+            }, 800); // Adjust the timeout to match the animation duration
+        }
+    
+        // Preload next page
+        var preloadPage = new Image();
+        preloadPage.src = 'case-2.html';
+    </script>
 
 
     <script>
