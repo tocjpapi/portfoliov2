@@ -392,7 +392,7 @@ clip-path: polygon(0 0,100% 0,100% 30px, 0 30px);
 }
 
 .block{
-height: 75vh;
+height: 100%;
 width: 92%;
 display: flex;
 justify-content: center;
@@ -406,12 +406,17 @@ width: 100%;
 overflow: hidden;
 border: 1px solid #111;
 border-radius: 13px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .blockimg img{
   height: 100%;
 width: 100%;
 object-fit: cover;
+position: absolute;
 }
 
 
@@ -422,6 +427,81 @@ object-fit: cover;
   flex-direction: column;
   padding-bottom: 55px;
   margin-top: 90px;
+}
+
+.text{
+  z-index: 5000;
+  color: var(--text);
+  font-size: 30px;
+  overflow: hidden;
+}
+
+.block{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text2{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid var(--text);
+  width: 67px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+}
+
+.text2 span{
+  opacity: 0;
+}
+
+
+.text3{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border: 1px solid var(--text);
+  width: 55px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  opacity: 0.5;
+}
+
+
+.slide-us{
+  animation: come 1s 0.5s ease forwards;
+  transform: translateY(100%);
+  overflow: hidden
+}
+
+.slide-ups{
+  opacity: 0;
+  transform: translateY(100%);
+  overflow: hidden
+}
+
+.slide-ups.animated {
+  animation: come 0.7s ease forwards;
+  opacity: 1;
+}
+
+@keyframes come {
+  from{
+  transform: translateY(100%)
+}
+
+to{
+  transform: translateY(0)
+}
 }
 
 @media (hover:hover){
