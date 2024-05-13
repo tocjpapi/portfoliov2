@@ -996,7 +996,11 @@ to{
     }
 }
   
-  
+  .error{
+    position: absolute;
+    bottom: 10px;
+    color: var(--text);
+  }
   
 
 @media (max-width: 600px) {
